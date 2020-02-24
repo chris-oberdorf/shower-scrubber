@@ -1,13 +1,16 @@
-# PSNK EMET 403 - Design Prep
+# PSNK Senior Design 
 
 ## Shower Scrubber code
 
-This is a fairly simple thing, an automated shower scrubber design.
+Automated shower scrubber -- essentially, a Roomba for your shower. Not particularly simple, not particularly complex.
+With any luck, this will work well!
+
+Current status: IN PROGRESS
 
 It will be designed to specifications such as these:
 
 | Metric                                  | Type     | Value (With units) |
-| :-------------------------------------- | :------- | :----------------- |
+| :-------------------------------------- | :------: | :----------------- |
 | Machine Footprint                       | **MAX**  | 18" x 18"          |
 | Battery Life                            | **MIN**  | 2 hours            |
 | Turn radius                             | **MAX**  | 1"                 |
@@ -23,4 +26,3 @@ It will be designed to specifications such as these:
 | Water capacity                          | **MAX**  | 3 liters           |
 | Soap capacity                           | **MAX**  | 1 liter            |
 
-We are as of yet unsure what language to use because of course this is yet to be built and a microcontroller hasn't been chosen.
