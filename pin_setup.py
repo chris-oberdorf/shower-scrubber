@@ -13,6 +13,9 @@ Contains:
 import pin_assignments as pins
 import RPi.GPIO as gpio
 
+# PWM frequency, in Hz
+FREQ = 100
+
 def set_io():
     # Start GPIO setup
     gpio.setwarnings(False)
@@ -63,3 +66,10 @@ def set_io():
     
     # Water level sensor: Input
     gpio.setup(pins.LEVEL_SENSOR, gpio.IN)
+    
+def set_pwm():
+    MOTOR_LEFT = gpio.PWM(pins.LEFT_PWM, FREQ)
+    MOTOR_LEFT.start(0) # Initialize with 0% D.C.
+    
+    MOTOR_RIGHT = gpio.PWM(pins.RIGHT_PWM, FREQ)
+    MOTOR_RIGHT.start(0) # Initialize with 0% D.C.
