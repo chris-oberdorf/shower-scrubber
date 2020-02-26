@@ -17,12 +17,13 @@ import pin_setup
 import RPi.gpio as gpio
 import time
 
-# Set up pins and set motors
+# Set up pins and set motors as well as turn delay
 pin_setup.set_io()
 pin_setup.set_pwm()
 
 LEFT_WHEEL = pin_setup.MOTOR_LEFT
 RIGHT_WHEEL = pin_setup.MOTOR_RIGHT
+TURN_DELAY = 5 # in seconds
 
 def set_move_forward():
     # Set left wheel clockwise, right wheel counterclockwise
@@ -67,6 +68,10 @@ def set_turn_left():
     # Set both motors to 50% duty cycle
     LEFT_WHEEL.ChangeDutyCycle(50)
     RIGHT_WHEEL.ChangeDutyCycle(50)
+    
+    # Delay then turn off wheels
+    time.sleep(TURN_DELAY)
+    set_move_stop()
 
 def set_turn_right():
     # Set left wheel and right wheel to counterclockwise
@@ -78,3 +83,7 @@ def set_turn_right():
     # Set both motors to 50% duty cycle
     LEFT_WHEEL.ChangeDutyCycle(50)
     RIGHT_WHEEL.ChangeDutyCycle(50)
+    
+    # Delay then turn off wheels
+    time.sleep(TURN_DELAY)
+    set_move_stop()
