@@ -56,3 +56,25 @@ def set_move_stop():
     # Set both motors to 0% duty cycle
     LEFT_WHEEL.ChangeDutyCycle(0)
     RIGHT_WHEEL.ChangeDutyCycle(0)
+
+def set_turn_left():
+    # Set left wheel and right wheel to clockwise
+    gpio.output(pins.LEFT_CW, True)
+    gpio.output(pins.LEFT_CCW, False)
+    gpio.output(pins.RIGHT_CW, True)
+    gpio.output(pins.RIGHT_CCW, False)
+    
+    # Set both motors to 50% duty cycle
+    LEFT_WHEEL.ChangeDutyCycle(50)
+    RIGHT_WHEEL.ChangeDutyCycle(50)
+
+def set_turn_right():
+    # Set left wheel and right wheel to counterclockwise
+    gpio.output(pins.LEFT_CW, False)
+    gpio.output(pins.LEFT_CCW, True)
+    gpio.output(pins.RIGHT_CW, False)
+    gpio.output(pins.RIGHT_CCW, True)
+    
+    # Set both motors to 50% duty cycle
+    LEFT_WHEEL.ChangeDutyCycle(50)
+    RIGHT_WHEEL.ChangeDutyCycle(50)
