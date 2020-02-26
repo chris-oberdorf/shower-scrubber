@@ -5,8 +5,8 @@ File containing the setup functions for all GPIO pins
 to assist in cleanliness of the main file.
 
 Contains:
-- set_io [Sets up all pins as the right IO]
-- set_pwm [Sets up the wheel PWM]
+- set_io  : Sets the GPIO pins according to plans
+- set_pwm : Sets up wheel PWM and initializes at 0% duty cycle                  
 """
 
 # Import statements
