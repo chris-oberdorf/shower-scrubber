@@ -58,3 +58,5 @@ while not finished:
         
         # Turn left
         movement.set_turn_left()
+        
+        finished = True
