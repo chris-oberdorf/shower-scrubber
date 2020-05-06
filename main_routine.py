@@ -39,12 +39,20 @@ def mapping_routine():
     # Initial turn 90° to the right
     movement.set_turn_right()
     
-    # Move forward until the LSWs are triggered
-    movement.set_move_forward()
-    get_lsw_inputs()
-    
-    while not (lsw_one and lsw_two and lsw_seven and lsw_eight):
+    while num_turns < 4:
+        # Move forward until the LSWs are triggered
+        movement.set_move_forward()
         get_lsw_inputs()
-    else:
-        set_move_stop()
+
+        # Move until a corner is hit
+        while not (lsw_one and lsw_two and lsw_seven and lsw_eight):
+            get_lsw_inputs()
+        else:
+            movement.set_move_stop()
         
+        # Turn right
+        movement.set_turn_right()
+        num_turns += 1
+    
+    map_done = True
+
